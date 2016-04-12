@@ -4,7 +4,7 @@ Rails.application.configure do
 # Email setup for heroku addons:add sendgrid:starter
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'enigmatic-depths-91844.herokuapp.com'
+  host = 'https://enigmatic-depths-91844.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address            => 'smtp.sendgrid.net',
