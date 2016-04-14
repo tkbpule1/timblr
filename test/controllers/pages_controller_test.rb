@@ -3,7 +3,7 @@ require 'test_helper'
 class PagesControllerTest < ActionController::TestCase
 
   def setup
-    @base_title = "Ruby on Rails Tutorial Sample Application"
+    @base_title = "Timblr"
   end
 
   test "should get home" do
