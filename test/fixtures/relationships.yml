@@ -1,0 +1,16 @@
+one:
+  follower: tim
+  followed: lana
+
+two:
+  follower: tim
+  followed: malory
+
+three:
+  follower: lana
+  followed: tim
+
+four:
+  follower: archer
+  followed: tim
+  
