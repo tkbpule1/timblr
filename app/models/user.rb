@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
+  # after_create :follow_admin!
   validates(:name, presence: true, length: { maximum: 25 })
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates(:email, presence: true, length: { maximum: 255 },
@@ -105,6 +106,10 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
+  # def follow_admin!
+  #   active_relationships.create!(followed_id: admin_user.id)
+  # end
+
 private
 
   # Converts email to all lower-case.
@@ -117,4 +122,11 @@ private
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+
+  # def admin_user
+  #   self.admin.id
+  # end
+
+
+
 end
